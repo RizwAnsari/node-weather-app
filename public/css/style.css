@@ -1,0 +1,43 @@
+body {
+    background: linear-gradient(to right, #eee, transparent), url('/image/weather.jpg') center/cover;
+    height: 100vh;
+    /* position: relative; */
+}
+
+.main-title {
+    position: relative; 
+    top: 40%;
+    text-align: center;
+    text-transform: uppercase;
+    /* left: 50%; */
+
+}
+
+.card {
+    margin: auto;
+    display: none;
+}
+
+.alert-weather {
+    display: none;
+}
+
+form {
+    width: 50%;
+    margin: auto;
+}
+
+.main-nav {
+    background: #00000025;
+    box-shadow: 1px 0.5px 15px 2px #000;
+
+}
+
+.main-nav a{
+    color: #fff;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    justify-content: center;
+}

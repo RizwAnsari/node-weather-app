@@ -1,0 +1,31 @@
+{{>header}}
+<div class="container mt-5">
+    <div class="alert alert-danger alert-weather" role="alert">
+    </div>
+    <h2 class="text-center">Enter place to get the weather</h2>
+    <form action="/weather" method="post" id="weather-form">
+        <div class="mb-3">
+            <label for="place" class="form-label">Place</label>
+            <input type="text" class="form-control" id="place" aria-describedby="placeHelp" name="place">
+        </div>
+        <button type="submit" class="btn btn-primary">Get Weather</button>
+    </form>
+    <div class="weather-data"></div>
+</div>
+<div class="container mb-5">
+    <div class="card" style="width: 18rem;">
+        <img src="" class="card-img-top" alt="weather-icon">
+        <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"></p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+            <li class="list-group-item"></li>
+        </ul>
+    </div>
+</div>
+<script src="/js/FormHandler.js"></script>
+{{>footer}}
