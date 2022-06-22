@@ -5,9 +5,14 @@ const cardTitle = document.querySelector('.card-title')
 const cardText = document.querySelector('.card-text')
 const cardImage = document.querySelector('.card-img-top')
 const listItems = document.querySelectorAll('.list-group-item')
+const weatherFormButton = document.querySelector('.weather-form-button')
 
 const submitHnadler = function(evt){
     evt.preventDefault()
+    weatherFormButton.innerHTML = `<button class="btn btn-primary" type="button" disabled>
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    Loading...
+  </button>`
     const place = evt.target[0].value;
     // console.log(evt.target[0].value);
     const xhttp = new XMLHttpRequest();
@@ -16,11 +21,13 @@ const submitHnadler = function(evt){
         const {error, location, weather_descriptions, temperature, feelslike, weather_icons, wind_speed, pressure} = JSON.parse(this.responseText)
         
         if (error) {
+            weatherFormButton.innerHTML = `<button type="submit" class="btn btn-primary">Get Weather</button>`
             alertDanger.style.display = 'block'
             alertDanger.innerText = error
             return
         }
         if (!error) {
+            weatherFormButton.innerHTML = `<button type="submit" class="btn btn-primary">Get Weather</button>`
             alertDanger.style.display = 'none'
         }
         
